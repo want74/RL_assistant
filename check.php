@@ -7,7 +7,7 @@ session_start();
 	$stroka=$query->fetch_assoc();
 	if (mysqli_num_rows($query)>0) {
 		$_SESSION['id']=$stroka['id'];
-		header('location: game.php');
+		header('location: main.php');
 	}
 	else{
 		header('location: go.php?error=Неверный номер или пароль');

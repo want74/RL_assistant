@@ -1,3 +1,9 @@
+<?php 
+session_start();
+include "connect.php";
+$query = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['id']}'");
+$stroka = $query->fetch_assoc();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,16 +59,27 @@
 			<div class="col-10 lol mx-auto">
 				<div class="row">
 					<div class="col-8 mx-auto mt-5">
-						<img src="img/qr.svg" alt="" class="w-100">
+						<?php   echo '<img class="w-100" src="qr.php?id='.$_SESSION['id'].'" />' ?>
 					</div>
 				</div>
 				<div class="row mt-4">
 					<div class="col-10 mx-auto">
 						<div class="row">
-							<p class="fio">Кычкин Андрей Николаевич</p>					
+							<p class="fio">
+								<?php 
+									echo  $stroka['fio'] 
+								?>								
+							</p>					
 						</div>
 						<div class="row mb-4">
-							<p class="class">Ученик 10 политехнического класса</p>	
+							<p class="class">
+								<?php 
+									echo $stroka['gradeOfClass'];
+									echo " ";
+									echo $stroka['class']; 
+									echo " класс"
+								?>	
+							</p>	
 						</div>				
 					</div>
 				</div>
