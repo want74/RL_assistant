@@ -1,8 +1,19 @@
 <?php 
 session_start();
 include "connect.php";
+$d = getdate();
+$realHour = $d[hours]+6;
+if ($realHour<12) {
+	$type = 1;
+}elseif ($realHour>11 && $realHour<16) {
+	$type = 2;
+}elseif ($realHour>15 && $realHour<25) {
+	$type = 3;
+}
+$day = $d[year]."-".$d[mon]."-".$d[mday];
 $query = mysqli_query($con, "SELECT * FROM users WHERE id='{$_GET['id']}'");
 $stroka = $query->fetch_assoc();
+$query1 = mysqli_query($con, "INSERT INTO history (type, day1, user_id, id) VALUES ('{$type}', '{$day}','{$_GET['id']}', NULL)");
  ?>
 <!DOCTYPE html>
 <html lang="en">
