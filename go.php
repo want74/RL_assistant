@@ -52,34 +52,36 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-9 mx-auto">
-					<div class="row">
-						<div class="col">
-							<div class="row">
-								<p class="num ml-3">Номер</p>
+				<form action="check.php" method="post" class="w-100">
+					<div class="col-9 mx-auto">
+						<div class="row">
+							<div class="col">
+								<div class="row">
+									<p class="num ml-3">Номер</p>
+								</div>
+								<div class="row"><input type="number" class="form-control input" name="num">
+								</div>
 							</div>
-							<div class="row"><input type="text" class="form-control input" name="email">
+						</div>
+						<div class="row mt-3">
+							<div class="col">
+								<div class="row">
+									<p class="num ml-3">Пароль</p>
+								</div>
+								<div class="row"><input type="password" class="form-control input" name="pass">
+								</div>
+							</div>
+						</div>
+						<div class="row mt-4">
+							<div class="col-6 mx-auto">
+								<div class="row"><button class="btn btn-go w-100">Войти</button></div>
+								<div class="row">
+									<a href="#" class="forget mx-auto">Забыли пароль?</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mt-3">
-						<div class="col">
-							<div class="row">
-								<p class="num ml-3">Пароль</p>
-							</div>
-							<div class="row"><input type="text" class="form-control input" name="email">
-							</div>
-						</div>
-					</div>
-					<div class="row mt-4">
-						<div class="col-6 mx-auto">
-							<div class="row"><button class="btn btn-go w-100">Войти</button></div>
-							<div class="row">
-								<p class="forget mx-auto">Забыли пароль?</p>
-							</div>
-						</div>
-					</div>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
