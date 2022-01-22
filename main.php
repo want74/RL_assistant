@@ -2,6 +2,7 @@
 session_start();
 include "connect.php";
 $query = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['id']}'");
+$query1 = mysqli_query($con, "SELECT * FROM history WHERE user_id='{$_SESSION['id']}'");
 $stroka = $query->fetch_assoc();
  ?>
 <!DOCTYPE html>
@@ -95,22 +96,44 @@ $stroka = $query->fetch_assoc();
 						<p>Всё</p>
 					</div>
 				</div>
+				<?php
+            	for($i=0;$i<3;$i++){
+            	$stroka1 = $query1->fetch_assoc();
+            	
+        	?>
 				<div class="row rowBorder">
 					<div class="col">
 						<div class="row">
 							<div class="col-4"><img src="img/morning.svg" class="w-100 mt-2"></div>
 							<div class="col">
 								<div class="row">
-									<h3>Завтрак</h3>
+									<h3>
+										<?php 
+											if ($stroka1['type']==1) {
+												echo "Завтрак";
+											}elseif ($stroka1['type']==2) {
+												echo "Обед";
+											}elseif ($stroka1['type']==3) {
+												echo "Ужин";
+											}
+										 ?>
+									</h3>
 								</div>
 								<div class="row">
-									<p>Декабрь 28,2021</p>
+									<p>
+										<?php 
+											echo $stroka1['day1'];
+										 ?>
+									</p>
 								</div>
 							</div>							
 						</div>
 					</div>
 					<div class="col-3"><img src="img/quest.svg" class="w-75 mt-3 mx-auto"></div>
 				</div>
+				<?php
+					}
+				?>
 			</div>
 		</div>
 	</div>
