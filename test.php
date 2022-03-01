@@ -76,6 +76,17 @@
 				<button class="btn btn-outline-success">yep</button>
 			</form>
 		</div>
+		<div class="row">			
+			<form action="reg.php" method="POST">
+				Создать новый аккаунт. Введите номер телефона
+				<input type="number" placeholder="89992111111" name="num">
+				<input type="text" placeholder="ФИО" name="fio">
+				<input type="text" placeholder="Пароль" name="password">
+				<input type="number" placeholder="Число класса.Напр.:10" name="gradeOfClass">
+				<input type="text" placeholder="гк,политех,рн,фм,инж,бх,гум" name="class" style="width: 250px;">
+				<button class="btn btn-outline-success">yep</button>
+			</form>
+		</div>
 	</div>
 
 
