@@ -104,8 +104,8 @@ $stroka = $query->fetch_assoc();
 				<div class="row rowBorder">
 					<div class="col">
 						<div class="row">
-							<div class="col-4"><img src="img/morning.svg" class="w-100 mt-2"></div>
-							<div class="col">
+							<div class="col-3"><img src="img/morning.svg" class="w-100 mt-2"></div>
+							<div class="col-4 ml-auto">
 								<div class="row">
 									<h3>
 										<?php 
@@ -129,7 +129,6 @@ $stroka = $query->fetch_assoc();
 							</div>							
 						</div>
 					</div>
-					<div class="col-3"><img src="img/quest.svg" class="w-75 mt-3 mx-auto"></div>
 				</div>
 				<?php
 					}
