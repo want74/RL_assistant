@@ -59,7 +59,7 @@ $stroka = $query->fetch_assoc();
 		<div class="row">
 			<div class="col-10 lol mx-auto">
 				<div class="row">
-					<div class="col-8 mx-auto mt-5">
+					<div class="col-11 mx-auto mt-5">
 						<?php   echo '<img class="w-100" src="qr.php?id='.$_SESSION['id'].'" />' ?>
 					</div>
 				</div>
