@@ -9,7 +9,7 @@
     ob_start("callback");
     
     // here DB request or some processing
-    $codeText = 'DEMO - '.$param;
+    $codeText = 'example.ru/accept?id='.$param;
     
     // end of processing here
     $debugLog = ob_get_contents();
