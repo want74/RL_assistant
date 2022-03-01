@@ -19,7 +19,7 @@ $stroka = $query->fetch_assoc();
 
 		.lol {
 			position: relative;
-			top: -100px;
+			top: -150px;
 			background: #00FF75;
 			border-radius: 50px;
 			height: 220px;
@@ -46,7 +46,7 @@ $stroka = $query->fetch_assoc();
 		<div class="row"><img src="img/aitalPIDR.svg" class="pidr w-100"></div>
 		<div class="row">
 			<div class="kek">
-				<h2 class="text-white ml-4">RL_assistant</h2>
+			<img src="img/LOGO.svg" class="w-50 ml-4">
 			</div>
 		</div>
 		<div class="row">

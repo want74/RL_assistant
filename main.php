@@ -53,7 +53,7 @@ $stroka = $query->fetch_assoc();
 		<div class="row"><img src="img/aitalPIDR.svg" class="pidr w-100"></div>
 		<div class="row">
 			<div class="kek">
-				<h2 class="text-white ml-4">QR-код для прохода в столовую</h2>
+			<img src="img/LOGO.svg" class="w-50 ml-4">
 			</div>
 		</div>
 		<div class="row">
@@ -91,10 +91,10 @@ $stroka = $query->fetch_assoc();
 				<div class="row">
 					<div class="col">
 						<p>История посещений</p>
-					</div>
+					</div><!-- Пока заморозил
 					<div class="col-3">
 						<p>Всё</p>
-					</div>
+					</div>-->
 				</div>
 				<?php
             	for($i=0;$i<3;$i++){
