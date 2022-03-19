@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<title>RLchik</title>
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="img/site.webmanifest">
@@ -21,6 +21,8 @@
 	<div class="col">
 		<div class="row">
 			<h1 class="mx-auto">Добро пожаловать в тех. зону!</h1>
+		</div><div class="row">
+			<h4 class="mx-auto">Не говорите ученикам про данную страницу!</h4>
 		</div>
 		<div class="row">			
 			<form action="fio.php" method="POST">
@@ -68,7 +70,7 @@
 			</form>
 		</div>
 		<div class="row">			
-			<form action="class.php" method="POST">
+			<form action="changeclass.php" method="POST">
 				Поменять чье-то направление класса. Введите его номер телефона
 				<input type="number" placeholder="89992111111" name="num">
 				Пишите сокращённо желаемый класс. Пример:гк,политех,рн,фм,инж,бх,гум
@@ -78,7 +80,7 @@
 		</div>
 		<div class="row">			
 			<form action="history.php" method="GET">
-				Изменить чью-то история посещений столовой. Введите его ID(Он на странице с аккаунтом)
+				Удалить/Добавить чью-то историю посещений столовой. Введите его ID(Он на странице с аккаунтом)
 				<input type="number" placeholder="ID" name="user_id">
 				<button class="btn btn-outline-success">yep</button>
 			</form>
@@ -92,6 +94,14 @@
 				<input type="number" placeholder="Число класса.Напр.:10" name="gradeOfClass">
 				<input type="text" placeholder="гк,политех,рн,фм,инж,бх,гум" name="class" style="width: 250px;">
 				<button class="btn btn-outline-success">yep</button>
+			</form>
+		</div>
+		<div class="row">			
+			<form action="del.php" method="POST">
+				Удалить аккаунт. Введите номер телефона
+				<input type="number" placeholder="89992111111" name="num">
+				<button class="btn btn-outline-success">yep</button>
+			    Если вы создали абсолютно ненужный аккаунт, то соообщите об этом разработчику.
 			</form>
 		</div>
 	</div>

@@ -2,7 +2,7 @@
 session_start();
 include "connect.php";
 $query = mysqli_query($con, "SELECT * FROM users WHERE id='{$_SESSION['id']}'");
-$query1 = mysqli_query($con, "SELECT * FROM history WHERE user_id='{$_SESSION['id']}'");
+$query1 = mysqli_query($con, "SELECT * FROM history WHERE user_id='{$_SESSION['id']}' ORDER BY id DESC");
 $stroka = $query->fetch_assoc();
  ?>
 <!DOCTYPE html>
@@ -11,14 +11,14 @@ $stroka = $query->fetch_assoc();
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<title>RLchik</title>
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="img/site.webmanifest">
 	<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
-	<title>RLchik</title>
 	
 	<style>
 		body {

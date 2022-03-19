@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>RLchik</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="img/site.webmanifest">
@@ -48,6 +48,7 @@
                     <p>
                         <?php 
                             echo $stroka1['day1'];
+
                         ?>
                     </p>
                 </div>
@@ -55,7 +56,8 @@
             <div class="col">
                 <form action="delhist.php" method="POST">
                     <?php
-                        echo '<input style="display:none;"type="num" name="id" value="'.$stroka1['id'].'">'
+                        echo '<input style="display:none;"type="num" name="id" value="'.$stroka1['id'].'">';
+                        echo '<input style="display:none;"type="num" name="user_id" value="'.$_GET['user_id'].'">'
                     ?>                    
                     <button class="btn">DELETE</button>
                 </form>
@@ -65,6 +67,16 @@
             }
         ?>
         
+    </div>
+    <div class="col">
+        <form action="createvisit.php" method="POST">
+                    <?php
+                        echo '<input type="num" placeholder="id" name="user_id" value="'.$_GET['user_id'].'">'
+                    ?>
+                    <input type="num" name="type" placeholder="1-завтрак,2-обед,3-ужин">
+                    <input type="text" name="day1" placeholder="гггг-мм-дд">                  
+                    <button class="btn">ACCEPT</button>
+        </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

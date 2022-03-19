@@ -6,11 +6,10 @@
     // we need to be sure ours script does not output anything!!!
     // otherwise it will break up PNG binary!
     
-    ob_start("callback");
+   
     
     // here DB request or some processing
-    $codeText = 'example.ru/accept?id='.$param;
-    
+    $codeText = 'http://rlchik.ru/accept.php?id='.$param;
     // end of processing here
     $debugLog = ob_get_contents();
     ob_end_clean();
