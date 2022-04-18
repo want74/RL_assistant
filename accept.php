@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< HEAD
 $_SESSION["vhod"] = 1;
 if ($_SESSION["vhod"]=0)
 {
@@ -13,24 +14,52 @@ if ($_SESSION["vhod"]=0)
 }
 
 
+=======
+include "connect.php";
+$poyas = '+9';
+$d= gmdate('H',time()+($poyas*3600));
+if ($d<12) {
+	$type = 1;
+}elseif ($d>11 && $d<16) {
+	$type = 2;
+}elseif ($d>15 && $d<23) {
+	$type = 3;
+}
+$day = gmdate('Y-m-d');
+$query = mysqli_query($con, "SELECT * FROM users WHERE id='{$_GET['id']}'");
+$stroka = $query->fetch_assoc();
+$query1 = mysqli_query($con, "INSERT INTO history (type, day1, user_id, id) VALUES ('{$type}', '{$day}','{$_GET['id']}', NULL)");
+>>>>>>> 1596f85b83c94e40145f9fd7230f38b2c5979f52
  ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RLchik</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+=======
+    	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+>>>>>>> 1596f85b83c94e40145f9fd7230f38b2c5979f52
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="img/site.webmanifest">
 	<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
+<<<<<<< HEAD
 
+=======
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RLchik</title>
+	
+>>>>>>> 1596f85b83c94e40145f9fd7230f38b2c5979f52
 	<style>
 		@font-face {
 			font-family: GVP;
@@ -114,6 +143,11 @@ if ($_SESSION["vhod"]=0)
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+	
+	
+>>>>>>> 1596f85b83c94e40145f9fd7230f38b2c5979f52
 
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
