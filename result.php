@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php
+	include 'connect.php';
+	$query = mysqli_query($con, "SELECT * FROM bals ORDER BY votes DESC");
+	$stroka = $query->fetch_assoc();
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -136,8 +141,10 @@
 <body class="d-flex" style="height:100vh;">
     <div class="heart mx-auto my-auto d-flex">
         <div class="strok my-auto w-100">
-            <p class="para text-center mx-auto">Кычкин Андрей и Фёдорова Сайаана</p>
-            <p class="votes text-center">12 голосов</p>
+            <p class="para text-center mx-auto">
+			<?php echo $stroka['pair']; ?></p>
+            <p class="votes text-center">
+            	Голосов: <?php $stroka['votes'];?></p>
         </div>
     </div>
     </div>
@@ -162,4 +169,4 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script>
 </body>
-</html> 
+</html>

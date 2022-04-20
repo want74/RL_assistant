@@ -1,10 +1,10 @@
 <?php
 	session_start();
 	include 'connect.php';
-	$query = mysqli_query($con, "SELECT * FROM bal WHERE id='{$_GET['id']}'");
+	$query = mysqli_query($con, "SELECT * FROM bals WHERE id='{$_GET['id']}'");
 	$stroka = $query->fetch_assoc();
  ?>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>RLchik</title>
-	
+
 	<style>
 		@font-face {
 			font-family: GVP;
@@ -44,7 +44,7 @@
 			font-size: 30px;
 			font-weight: bold;
 		}
-		
+
 		.class {
 			font-size: 24px;
 		}
@@ -72,7 +72,12 @@
 <body>
 <div class="col">
 		<div class="row">
-			<h2 class="mx-auto kek">Голос засчитан</h2>
+			<h2 class="mx-auto kek"><?php
+				if ($_SESSION['vhod']==1) {
+					echo "Голос засчитан";
+				}
+				else echo "Голос убран";
+			 ?></h2>
 		</div>
 		<div class="row mt-3">
 			<img src="img/heart.svg" class="w-100 mx-auto">
@@ -87,9 +92,9 @@
 		<div class="row">
 			<div class="col">
 				<form action="rm.php" method="GET" class="w-100">
-					
+
 						<?php
-							echo '<input type="number" name="pair_id" value="'.$_GET['pair_id'].'" class="d-none">';
+							echo '<input type="number" name="id" value="'.$_GET['id'].'" class="d-none">';
 						?>
 					<div class="row">
 						<button class="btn mx-auto btn-otmena" type="submit">
@@ -100,8 +105,8 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
